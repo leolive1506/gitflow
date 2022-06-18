@@ -18,7 +18,7 @@
 - develop
     - Aqui que desenvolve o fluxo, cada feature nova é develvovida na **feature branches**, quando terminada a nova feature, enviada pra develop
     - Recebe todas novas features
-- relaease branches
+- release branches
     - Conforme, acumulado de feature no **develop**, quando considerado entregável é enviada para esse branch
     - Ambiente de homologação, ambiete de teste
     - Não é criado funcinolidade nesse branch
@@ -36,14 +36,21 @@
 git flow init
 ```
 
-- Criar uma nova feature
+### Feature
+- Criar uma nova
 ```sh
 # start -> começar uma nova
 git flow feature start name_branch
 ```
 
-- Finalizar uma branch
+- Finalizar uma
+    - Ao finalizar, ja faz merge na develop e exclui o branch finalizado
 ```sh
 # start -> começar uma nova
 git flow feature finish name_branch
+```
+
+### Release
+```sh
+git flow release start 0.1.0
 ```
