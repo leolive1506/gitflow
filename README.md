@@ -43,6 +43,7 @@ git flow feature start name_branch
 ```
 
 - Finalizar uma branch
+    - Ao finalizar, ja faz merge na develop e exclui o branch finalizado
 ```sh
 # start -> começar uma nova
 git flow feature finish name_branch
