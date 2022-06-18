@@ -1,6 +1,3 @@
-# Pesquisar
-- Diferença entre bugfix e hotfix
-
 # Git hub flow
     - Branch master
         - Desevelver -> cria um feature
@@ -30,6 +27,13 @@
 - Branchs de suporte são automática excluidas do repositório quando dizer que terminou
     - Duas que sempre permanecem são: develop e master
 
+# Diferença entre bugfix e hotfix
+## Bugfix
+    - problemas encontrados e resolvidos durante as fases de produção ou teste ou mesmo após a implantação como parte do ciclo normal de lançamento de um produto
+## Hotfixes
+    -  são aplicados somente depois que o produto é lançado e está ativo.
+
+
 ## Comandos
 - Iniciar gitflow
 ```sh
@@ -43,6 +47,12 @@ git flow init
 git flow feature start name_branch
 ```
 
+- Subie p git
+- Se tiver certo finaliza com ```sh git flow feature finish name_branch```
+```sh
+git flow feature publish name_branch
+```
+
 - Finalizar uma
     - Ao finalizar, ja faz merge na develop e exclui o branch finalizado
 ```sh
@@ -50,7 +60,32 @@ git flow feature start name_branch
 git flow feature finish name_branch
 ```
 
-### Release
+- Obter uma feature
 ```sh
-git flow release start 0.1.0
+git flow feature pull name_branch
 ```
+
+### Release
+- Crirar um nova
+```sh
+# usado versão no nome, ex: 0.1.0
+git flow release start name_branch
+```
+
+- Finalizar
+    - Após finalizado, atualiza o **master** e o **develop**
+    - Força criar tag, normalmetne com o nome (usado versão)
+```sh
+git flow release start name_branch
+```
+
+- Ver as tags
+```sh
+git tag
+```
+
+## Hot fix
+- Para criar e terminar uma é o mesmo processo acima
+- Branch é criada a partir da master
+    - A ideia é "dectou um problema em prod e precisa resolver"
+    - Apos finalizaod, atualiza a **master** e **develop**
