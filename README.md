@@ -47,7 +47,7 @@ git flow init
 git flow feature start name_branch
 ```
 
-- Subie p git
+- Subir p git
 - Se tiver certo finaliza com ```sh git flow feature finish name_branch```
 ```sh
 git flow feature publish name_branch
